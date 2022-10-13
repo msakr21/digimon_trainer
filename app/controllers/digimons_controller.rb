@@ -4,7 +4,6 @@ class DigimonsController < ApplicationController
   end
 
   def show
-    # binding.pry;binding.pry
     @digimon = Digimon.find(params[:id])
   end
 end
