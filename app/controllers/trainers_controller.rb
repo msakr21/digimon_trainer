@@ -5,7 +5,6 @@ class TrainersController < ApplicationController
   end
 
   def show
-    # require 'pry';binding.pry
     @trainer = Trainer.find(params[:id])
   end
 
