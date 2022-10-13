@@ -1,0 +1,5 @@
+<h1> <%= @trainer.name %>'s Digimon: </h1>
+
+<% @digimons.each do |digimon| %>
+ <%= link_to digimon.name, "/digimons/#{digimon.id}" %>
+<% end %>

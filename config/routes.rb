@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/trainers/:id', to: 'trainers#show'
   get '/digimons', to: 'digimons#index'
   get '/digimons/:id', to: 'digimons#show'
+  get '/trainers/:trainer_id/digimons', to: 'trainer_digimons#index'
 end
