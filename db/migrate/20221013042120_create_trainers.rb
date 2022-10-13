@@ -3,7 +3,7 @@ class CreateTrainers < ActiveRecord::Migration[5.2]
     create_table :trainers do |t|
       t.string :name
       t.integer :age
-      t.boolean :finished_tutorial
+      t.boolean :tutorial_completed
 
       t.timestamps
     end
