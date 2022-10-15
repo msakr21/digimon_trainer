@@ -17,10 +17,6 @@ RSpec.describe 'the trainers index page' do
     trainer = Trainer.create!(name: "Mostafa", age: 27, tutorial_completed: false)
     visit "/trainers"
 
-    
-
-    save_and_open_page
-
     expect("Mostafa").to appear_before("Abbas", only_text: true)
   end
 end
