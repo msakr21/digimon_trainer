@@ -10,5 +10,9 @@ RSpec.describe 'the digimon show page' do
     # require 'pry';binding.pry
     expect(page).to have_content(digimon.name)
     expect(page).to_not have_content(digimon_2.name)
+    expect(page).to have_content(digimon.kind)
+    expect(page).to have_content(digimon.starter)
+    expect(page).to have_content(digimon.wins)
+    expect(page).to have_content(trainer.name)
   end
 end
