@@ -13,5 +13,7 @@ RSpec.describe 'the digimons index page' do
     expect(page).to have_content(digimon.wins)
     expect(page).to have_content(trainer.name)
     expect(page).to have_content(digimon_2.name)
+    expect(page).to have_content(digimon.created_at)
+    expect(page).to have_content(digimon.updated_at)
   end
 end
