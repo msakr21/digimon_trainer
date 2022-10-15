@@ -1,4 +1,4 @@
 <h1>Digimon</h1>
 <% @digimons.each do |digimon| %>
-  <p><%= digimon.name %></p>
+  <p> Name: <%= digimon.name %> Kind: <%= digimon.kind %> Starter: <%= digimon.starter %> Wins: <%= digimon.wins %> Trainer: <%= digimon.trainer.name %> Created on: <%= digimon.created_at %> Last Updated: <%= digimon.updated_at %></p>
 <% end %>
