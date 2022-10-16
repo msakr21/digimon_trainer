@@ -3,3 +3,5 @@
 <% @digimons.each do |digimon| %>
  <%= link_to digimon.name, "/digimons/#{digimon.id}" %>
 <% end %>
+
+<h3><a href="/trainers/<%= @trainer.id %>/digimons/new">Add New Digimon</a></h3>

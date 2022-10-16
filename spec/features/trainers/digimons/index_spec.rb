@@ -29,4 +29,12 @@ RSpec.describe 'Trainers Digimons index' do
     expect(current_path).to eq("/digimons/#{@digimon.id}")
     #another Capybara method
   end
+
+  it "has a link that redirects to '/trainers/@trainer.id/digimons/new'" do
+    visit "/trainers/#{@trainer.id}/digimons"
+
+    expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/digimons/new']")
+  end
 end
+
+
