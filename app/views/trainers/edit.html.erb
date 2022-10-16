@@ -1,0 +1,18 @@
+<form action="/trainers/<%= @trainer.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <h2>Edit:</h2>
+  <p>Name:</p>
+  <input type='text' name='trainer[name]' value="<%= @trainer.name %>"/><br/>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <br> 
+  <p>Age:</p>
+  <input type='text' name='trainer[age]' value="<%= @trainer.age %>"/><br/>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <br> 
+  <p>Tutorial Completed?</p>
+  <pre> <input type='radio' id="true" name='trainer[tutorial_completed]' value="true" checked="<%= @trainer.tutorial_completed %>"/>    <input type='radio' id="false" name='trainer[tutorial_completed]' value="false" checked="<% !@trainer.tutorial_completed %>"/></pre>
+  <pre><label for="true">True</label>  <label for="false">False</label></pre>
+  <br> 
+  <input type='submit' value="Submit"/>
+</form>

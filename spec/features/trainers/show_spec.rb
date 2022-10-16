@@ -29,6 +29,12 @@ RSpec.describe 'the @trainers show page' do
   it "links to a list of @digimon for the @trainer" do
     visit "/trainers/#{@trainer.id}"
 
-    expect(page).to have_selector(:css, 'a[href="/trainers/#{@trainer.id}/digimons"]')
+    expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/digimons']")
+  end
+
+  it "has a link to edit the trainer information" do
+    visit "/trainers/#{@trainer.id}"
+
+    expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/edit']")
   end
 end
