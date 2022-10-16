@@ -5,4 +5,4 @@
 <p> Digimon Companions: <%= @trainer.digimons_count %> </p>
 <p> Created on: <%= @trainer.created_at %> </p>
 <p> Last Updated: <%= @trainer.updated_at %> </p>
-<h3> <a href="/trainers/#{@trainer.id}/digimons">List of Digimon</a> </h3>
+<h3> <a href="/trainers/<%= @trainer.id %>/digimons">List of Digimon</a> </h3>
