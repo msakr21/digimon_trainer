@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post'/trainers', to: 'trainers#create'
   get '/trainers/:id', to: 'trainers#show'
   get '/digimons', to: 'digimons#index'
+  get '/digimons/:digimon_id/edit', to: 'digimons#edit'
   get '/digimons/:id', to: 'digimons#show'
   get '/trainers/:trainer_id/edit', to: 'trainers#edit'
   patch '/trainers/:id', to: 'trainers#update'
