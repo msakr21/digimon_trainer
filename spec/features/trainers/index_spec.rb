@@ -20,4 +20,10 @@ RSpec.describe 'the trainers index page' do
 
     expect("Mostafa").to appear_before("Abbas", only_text: true)
   end
+
+  it "has a link that redirects to '/trainers/new'" do
+    visit "/trainers"
+
+    expect(page).to have_selector(:css, 'a[href="/trainers/new"]')
+  end
 end
