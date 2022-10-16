@@ -1,2 +1,3 @@
 <h1><%= @digimon.name %></h1>
+<h4><a href="/digimons/<%= @digimon.id %>/edit">Update Digimon</a></h4>
 <p> Kind: <%= @digimon.kind %> Starter: <%= @digimon.starter %> Wins: <%= @digimon.wins %> Trainer: <%= @digimon.trainer.name %> Created on: <%= @digimon.created_at %> Last Updated: <%= @digimon.updated_at %></p>

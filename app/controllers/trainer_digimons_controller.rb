@@ -6,11 +6,9 @@ class TrainerDigimonsController < ApplicationController
 
   def new
     @trainer = Trainer.find(params[:trainer_id])
-    # require 'pry'; binding.pry
   end
   
   def create
-    # require 'pry';binding.pry
     trainer = Trainer.find(params[:trainer_id])
     digimon = trainer.digimons.new({name: params[:digimon][:name], kind: params[:digimon][:kind], starter: params[:digimon][:starter], wins: params[:digimon][:wins]})
 
