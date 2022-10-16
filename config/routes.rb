@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get '/digimons/:id', to: 'digimons#show'
   get '/trainers/:trainer_id/edit', to: 'trainers#edit'
   patch '/trainers/:id', to: 'trainers#update'
+  get '/trainers/:trainer_id/digimons/new', to: 'trainer_digimons#new'
   get '/trainers/:trainer_id/digimons', to: 'trainer_digimons#index'
+  post'/trainers/:trainer_id/digimons', to: 'trainer_digimons#create'
 end
