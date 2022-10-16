@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   get '/trainers/:trainer_id/edit', to: 'trainers#edit'
   patch '/trainers/:id', to: 'trainers#update'
   get '/trainers/:trainer_id/digimons', to: 'trainer_digimons#index'
-  get '/trainers/new', to: 'trainers#new'
 end

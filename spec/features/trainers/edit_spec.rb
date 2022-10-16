@@ -12,9 +12,6 @@ RSpec.describe 'the edit trainer page' do
   it "displays a filled form" do
     visit "/trainers/#{@trainer.id}/edit"
 
-    save_and_open_page
-
-    # expect(page).to have_content("New Trainer Submission Form")
     expect(page).to have_content("Name:")
     expect(page).to have_field("trainer[name]", with: "#{@trainer.name}")
     expect(page).to have_content("Age:")
@@ -24,7 +21,7 @@ RSpec.describe 'the edit trainer page' do
     expect(page).to have_selector(:css, "form")
   end
 
-  xit "updates an entry in the database upon clicking submit" do
+  it "updates an entry in the database upon clicking submit" do
     visit "/trainers/#{@trainer.id}/edit"
 
     fill_in "trainer[name]", with: "NOT Jessey"
@@ -33,7 +30,7 @@ RSpec.describe 'the edit trainer page' do
     
     click_on "Submit"
 
-    expect(page.current_path).to eql('/trainers/#{@trainer.id}')
+    expect(page.current_path).to eql("/trainers/#{@trainer.id}")
     expect(page).to have_content("NOT Jessey")
   end
 
