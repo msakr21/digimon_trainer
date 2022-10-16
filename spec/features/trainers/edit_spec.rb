@@ -33,5 +33,4 @@ RSpec.describe 'the edit trainer page' do
     expect(page.current_path).to eql("/trainers/#{@trainer.id}")
     expect(page).to have_content("NOT Jessey")
   end
-
 end
