@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'the digimon show page' do
   before :each do
-    trainer = Trainer.create!(name: "Mostafa", age: 27, tutorial_completed: false)
-    digimon = trainer.digimons.create!(name: "Agu", kind: "Agumon", starter: true, wins: 9)
-    digimon_2 = trainer.digimons.create!(name: "Gagu", kind: "Gabumon", starter: false, wins: 7)
+    @trainer = Trainer.create!(name: "Mostafa", age: 27, tutorial_completed: false)
+    @digimon = @trainer.digimons.create!(name: "Agu", kind: "Agumon", starter: true, wins: 9)
+    @digimon_2 = @trainer.digimons.create!(name: "Gagu", kind: "Gabumon", starter: false, wins: 7)
   end
   
   it "displays the digimon's given_name" do
-    visit "/digimons/#{digimon.id}"
+    visit "/digimons/#{@digimon.id}"
 
     expect(page).to have_content(@digimon.name)
     expect(page).to_not have_content(@digimon_2.name)
@@ -23,6 +23,6 @@ RSpec.describe 'the digimon show page' do
   it "has a link to edit the trainer information" do
     visit "/digimons/#{@digimon.id}"
 
-    expect(page).to have_selector(:css, "a[href='/trainers/#{@digimon.id}/edit']")
+    expect(page).to have_selector(:css, "a[href='/digimons/#{@digimon.id}/edit']")
   end
 end
