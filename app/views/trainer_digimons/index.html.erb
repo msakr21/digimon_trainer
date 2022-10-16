@@ -1,4 +1,5 @@
 <h1> <%= @trainer.name %>'s Digimon: </h1>
+<h4> <%= link_to "Sort Alphabatically",  :sort => "name" %> </h4> 
 
 <% @digimons.each do |digimon| %>
  <%= link_to digimon.name, "/digimons/#{digimon.id}" %>
