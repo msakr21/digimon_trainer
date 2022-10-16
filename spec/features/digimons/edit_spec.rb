@@ -22,17 +22,4 @@ RSpec.describe 'the edit digimon page' do
     expect(page).to have_field("digimon[wins]", with: "#{@digimon.wins}")
     expect(page).to have_selector(:css, "form")
   end
-
-  xit "updates an entry in the database upon clicking submit" do
-    visit "/trainers/#{@trainer.id}/edit"
-
-    fill_in "trainer[name]", with: "NOT Jessey"
-    fill_in "trainer[age]", with: "201"
-    choose "true"
-    
-    click_on "Submit"
-
-    expect(page.current_path).to eql("/trainers/#{@trainer.id}")
-    expect(page).to have_content("NOT Jessey")
-  end
 end
