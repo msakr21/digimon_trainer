@@ -5,11 +5,9 @@
   <h2>Edit:</h2>
   <p>Name:</p>
   <input type='text' name='digimon[name]' value="<%= @digimon.name %>"/><br/>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br> 
   <p>Kind:</p>
   <input type='text' name='digimon[kind]' value="<%= @digimon.kind %>"/><br/>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br> 
   <p>Starter?</p>
   <pre> <input type='radio' id="true" name='digimon[starter]' value="true" checked="<%= @digimon.starter %>"/>    <input type='radio' id="false" name='digimon[starter]' value="false" checked="<% !@digimon.starter %>"/></pre>
@@ -17,7 +15,6 @@
   <br>
   <p>Wins:</p>
   <input type='text' name='digimon[wins]' value="<%= @digimon.wins %>"/><br/>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br>
   <p>Trainer Name:</p>
   <p> <%= @digimon.trainer.name %> <p>

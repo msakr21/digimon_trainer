@@ -47,8 +47,6 @@ RSpec.describe 'Trainers Digimons index' do
     
     click_on "Sort Alphabatically"
 
-    save_and_open_page
-
     expect(current_path).to eq("/trainers/#{@trainer.id}/digimons")
     expect("Agu").to appear_before("Gabu", only_text: true)
   end

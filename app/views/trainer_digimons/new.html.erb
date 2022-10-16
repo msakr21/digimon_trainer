@@ -3,11 +3,9 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter Name:</p>
   <input type='text' name='digimon[name]'/><br/>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br> 
   <p>Enter Kind:</p>
   <input type='text' name='digimon[kind]'/><br/>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br> 
   <p>Starter?</p>
   <pre> <input type='radio' id="true" name='digimon[starter]' value="true"/>    <input type='radio' id="false" name='digimon[starter]' value="false"/></pre>
@@ -15,7 +13,6 @@
   <br>
   <p>Enter Wins:</p>
   <input type='text' name='digimon[wins]'/><br/>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br>
   <p>Trainer Name:</p>
   <p> <%= @trainer.name %> <p>
