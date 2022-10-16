@@ -32,4 +32,11 @@ RSpec.describe 'the digimons index page' do
     expect(page).to have_content(@digimon.created_at)
     expect(page).to have_content(@digimon.updated_at)
   end
+
+  it "has a link that allows editing of a record" do
+    visit "/digimons"
+
+    expect(page).to have_selector(:css, "a[href='/digimons/#{@digimon.id}/edit']")
+    #digimon_2 would not show up because starter is false
+  end
 end

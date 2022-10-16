@@ -27,7 +27,7 @@ RSpec.describe 'the trainers index page' do
     expect(page).to have_selector(:css, 'a[href="/trainers/new"]')
   end
 
-  it "has a link that redirects to '/trainers/new'" do
+  it "has a link that allows editing of a record" do
     visit "/trainers"
 
     expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/edit']")
