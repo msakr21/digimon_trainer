@@ -35,6 +35,23 @@ RSpec.describe 'Trainers Digimons index' do
 
     expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/digimons/new']")
   end
+
+  it "has a button to list digimons in alphabitcal order" do
+    visit "/trainers/#{@trainer.id}/digimons"
+
+    expect(page).to have_link("Sort Alphabatically")
+  end
+
+  it "sorts the digimon in the trainer/digimon index page in alphabatical order" do
+    visit "/trainers/#{@trainer.id}/digimons"
+    
+    click_on "Sort Alphabatically"
+
+    save_and_open_page
+
+    expect(current_path).to eq("/trainers/#{@trainer.id}/digimons")
+    expect("Agu").to appear_before("Gabu", only_text: true)
+  end
 end
 
 

@@ -1,7 +1,7 @@
 class TrainerDigimonsController < ApplicationController
   def index
     @trainer = Trainer.find(params[:trainer_id])
-    @digimons = @trainer.digimons.all
+    @digimons = @trainer.digimons.all.order(params[:sort])
   end
 
   def new
