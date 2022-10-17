@@ -33,4 +33,10 @@ class TrainersController < ApplicationController
     Trainer.destroy(params[:id])
     redirect_to "/trainers"
   end
+
+
+private
+  def trainer_params
+    params.permit(:name, :age, :tutorial_completed)
+  end
 end

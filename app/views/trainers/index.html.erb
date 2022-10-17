@@ -1,5 +1,5 @@
 <h1>Trainers</h1>
 <% @trainers.each do |trainer| %>
-  <p> <%= trainer.name %> <a href="/trainers/<%= trainer.id %>/edit">edit</a> </p>
+  <p> <%= trainer.name %> <a href="/trainers/<%= trainer.id %>/edit">edit</a> <%= link_to "delete", "/trainers/#{trainer.id}", method: :delete %> </p>
 <% end %>
 <h3><a href="/trainers/new">Add New Trainer</a></h3>
