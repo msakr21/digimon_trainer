@@ -1,7 +1,7 @@
 class TrainersController < ApplicationController
 
   def index
-    @trainers = Trainer.all.order(created_at: :desc)
+    @trainers = Trainer.all.order(created_at: :desc)  #Trainer.order_by_created_at
   end
 
   def show
