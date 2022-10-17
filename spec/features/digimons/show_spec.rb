@@ -20,9 +20,15 @@ RSpec.describe 'the digimon show page' do
     expect(page).to have_content(@digimon.updated_at)
   end
 
-  it "has a link to edit the trainer information" do
+  it "has a link to edit the digimon's information" do
     visit "/digimons/#{@digimon.id}"
 
     expect(page).to have_selector(:css, "a[href='/digimons/#{@digimon.id}/edit']")
+  end
+
+  it "has a button to delete the digimon's record" do
+    visit "/digimons/#{@digimon.id}"
+
+    expect(page).to have_button("delete")
   end
 end
