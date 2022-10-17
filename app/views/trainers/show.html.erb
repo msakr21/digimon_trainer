@@ -1,5 +1,11 @@
 <h1> <%= @trainer.name %> </h1>
 <h4><a href="/trainers/<%= @trainer.id %>/edit">Update Trainer</a></h4>
+<p> Age: <%= @trainer.age %> </p>
+<p> Tutorial Completed? <%= @trainer.tutorial_completed %> </p>
+<p> Digimon Companions: <%= @trainer.digimons_count %> </p>
+<p> Created on: <%= @trainer.created_at %> </p>
+<p> Last Updated: <%= @trainer.updated_at %> </p>
+<h3> <a href="/trainers/<%= @trainer.id %>/digimons">List of Digimon</a> </h3>
 <h4>
   <form action="/trainers/<%= @trainer.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -7,9 +13,3 @@
     <input type="submit" value="delete"/>
   </form>
 </h4>
-<p> Age: <%= @trainer.age %> </p>
-<p> Tutorial Completed? <%= @trainer.tutorial_completed %> </p>
-<p> Digimon Companions: <%= @trainer.digimons_count %> </p>
-<p> Created on: <%= @trainer.created_at %> </p>
-<p> Last Updated: <%= @trainer.updated_at %> </p>
-<h3> <a href="/trainers/<%= @trainer.id %>/digimons">List of Digimon</a> </h3>
