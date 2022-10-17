@@ -37,4 +37,10 @@ RSpec.describe 'the @trainers show page' do
 
     expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/edit']")
   end
+
+  it "has a button to delete the trainer's record" do
+    visit "/trainers/#{@trainer.id}"
+
+    expect(page).to have_button("delete")
+  end
 end

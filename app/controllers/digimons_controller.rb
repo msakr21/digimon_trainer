@@ -17,4 +17,9 @@ class DigimonsController < ApplicationController
     digimon.save
     redirect_to "/digimons/#{digimon.id}"
   end
+
+  def destroy
+    Digimon.destroy(params[:id])
+    redirect_to "/digimons"
+  end
 end

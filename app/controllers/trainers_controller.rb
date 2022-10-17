@@ -28,4 +28,9 @@ class TrainersController < ApplicationController
     trainer.save
     redirect_to "/trainers/#{trainer.id}"
   end
+
+  def destroy
+    Trainer.destroy(params[:id])
+    redirect_to "/trainers"
+  end
 end
