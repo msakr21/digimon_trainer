@@ -16,7 +16,7 @@ RSpec.describe 'Trainers Digimons new' do
     choose "false"
     fill_in "digimon[wins]", with: 7
     
-    click_on "Submit"
+    click_on "Create Digimon"
 
     expect(page.current_path).to eql("/trainers/#{@trainer.id}/digimons")
     expect(page).to have_content("Gabu")

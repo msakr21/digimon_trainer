@@ -8,8 +8,8 @@ RSpec.describe 'the create trainer' do
     fill_in "trainer[age]", with: "102"
     choose "false"
     
-    click_on "Submit"
-
+    click_on "Create Trainer"
+  
     expect(page.current_path).to eql('/trainers')
     expect(page).to have_content("Jessey")
   end

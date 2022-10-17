@@ -32,5 +32,12 @@ RSpec.describe 'the trainers index page' do
 
     expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/edit']")
     expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer_2.id}/edit']")
+    expect(page).to have_link("edit", count: 2)
+  end
+
+  it "has a link that allows deleting of a record" do
+    visit "/trainers"
+
+    expect(page).to have_link("delete", count: 2)
   end
 end

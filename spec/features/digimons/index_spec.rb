@@ -37,6 +37,13 @@ RSpec.describe 'the digimons index page' do
     visit "/digimons"
 
     expect(page).to have_selector(:css, "a[href='/digimons/#{@digimon.id}/edit']")
+    expect(page).to have_link("edit", count: 1)
     #digimon_2 would not show up because starter is false
+  end
+
+  it "has a link that allows deleting of a record" do
+    visit "/digimons"
+
+    expect(page).to have_link("delete", count: 1)
   end
 end
