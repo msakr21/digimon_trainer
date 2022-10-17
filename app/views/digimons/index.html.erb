@@ -1,6 +1,6 @@
 <h1>Digimon</h1>
 <% @digimons.each do |digimon| %>
   <% if digimon.starter == true %>
-    <p> Name: <%= digimon.name %> Kind: <%= digimon.kind %> Starter: <%= digimon.starter %> Wins: <%= digimon.wins %> Trainer: <%= digimon.trainer.name %> Created on: <%= digimon.created_at %> Last Updated: <%= digimon.updated_at %> <a href="/digimons/<%= digimon.id %>/edit">edit</a> </p>
+    <p> Name: <%= digimon.name %> Kind: <%= digimon.kind %> Starter: <%= digimon.starter %> Wins: <%= digimon.wins %> Trainer: <%= digimon.trainer.name %> Created on: <%= digimon.created_at %> Last Updated: <%= digimon.updated_at %> <a href="/digimons/<%= digimon.id %>/edit">edit</a> <%= link_to "delete", "/digimons/#{digimon.id}", method: :delete %></p>
   <% end %>
 <% end %>

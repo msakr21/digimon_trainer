@@ -17,4 +17,14 @@ RSpec.describe 'destroy' do
     expect(page.current_path).to eql("/trainers")
     expect(page).to_not have_content("Mostafa")
   end
+
+  it "has a link that allows deleting of a record" do
+    visit "/trainers"
+    expect(page).to have_content("Abbas")
+
+    page.first(:link, "delete").click
+    
+    expect(page.current_path).to eql("/trainers")
+    expect(page).to_not have_content("Abbas")
+  end
 end
