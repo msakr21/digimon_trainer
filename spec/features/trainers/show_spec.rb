@@ -9,7 +9,7 @@ RSpec.describe 'the @trainers show page' do
     @digimon_3 = @trainer_2.digimons.create!(name: "Potato", kind: "Patamon", starter: false, wins: 9)
   end
 
-  it "displays a @trainer's information" do
+  it "displays a trainer's information" do
     visit "/trainers/#{@trainer.id}"
 
     expect(page).to have_content(@trainer.name)
@@ -20,15 +20,15 @@ RSpec.describe 'the @trainers show page' do
     expect(page).to_not have_content(@trainer_2.name)
   end
 
-  it "displays how many @digimons a @trainer has" do
+  it "displays how many digimons a trainer has" do
     visit "/trainers/#{@trainer.id}"
 
     expect(page).to have_content(@trainer.digimons_count)
   end
 
-  it "links to a list of @digimon for the @trainer" do
+  it "links to a list of digimon for the trainer" do
     visit "/trainers/#{@trainer.id}"
-
+    # save_and_open_page
     expect(page).to have_selector(:css, "a[href='/trainers/#{@trainer.id}/digimons']")
   end
 

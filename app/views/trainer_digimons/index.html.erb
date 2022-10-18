@@ -2,7 +2,13 @@
 <h4> <%= link_to "Sort Alphabatically",  :sort => "name" %> </h4> 
 
 <% @digimons.each do |digimon| %>
- <%= link_to digimon.name, "/digimons/#{digimon.id}" %>
+ <p> Name: <%= digimon.name %> </p> 
+ <p> Kind: <%= digimon.kind %> </p>
+ <p> Starter: <%= digimon.starter %> </p>
+ <p> Wins: <%= digimon.wins %> </p>
+ <p> Trainer: <%= digimon.trainer.name %> </p>
+ <p> Created on: <%= digimon.created_at %> </p>
+ <p> Last Updated: <%= digimon.updated_at %> </p>
 <% end %>
 
 <h3><a href="/trainers/<%= @trainer.id %>/digimons/new">Add New Digimon</a></h3>

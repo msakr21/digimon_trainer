@@ -11,10 +11,10 @@ RSpec.describe 'Trainers Digimons new' do
   it "creates a new entry in the database upon clicking submit" do
     visit "/trainers/#{@trainer.id}/digimons/new"
 
-    fill_in "digimon[name]", with: "Gabu"
-    fill_in "digimon[kind]", with: "Gabumon"
+    fill_in "name", with: "Gabu"
+    fill_in "kind", with: "Gabumon"
     choose "false"
-    fill_in "digimon[wins]", with: 7
+    fill_in "wins", with: 7
     
     click_on "Create Digimon"
 

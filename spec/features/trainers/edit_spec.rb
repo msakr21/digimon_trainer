@@ -13,24 +13,11 @@ RSpec.describe 'the edit trainer page' do
     visit "/trainers/#{@trainer.id}/edit"
 
     expect(page).to have_content("Name:")
-    expect(page).to have_field("trainer[name]", with: "#{@trainer.name}")
+    expect(page).to have_field("name", with: "#{@trainer.name}")
     expect(page).to have_content("Age:")
-    expect(page).to have_field("trainer[age]", with: "#{@trainer.age}")
+    expect(page).to have_field("age", with: "#{@trainer.age}")
     expect(page).to have_content("Tutorial Completed?")
     expect(page).to have_checked_field("false")
     expect(page).to have_selector(:css, "form")
-  end
-
-  it "updates an entry in the database upon clicking submit" do
-    visit "/trainers/#{@trainer.id}/edit"
-
-    fill_in "trainer[name]", with: "NOT Jessey"
-    fill_in "trainer[age]", with: "201"
-    choose "true"
-    
-    click_on "Submit"
-
-    expect(page.current_path).to eql("/trainers/#{@trainer.id}")
-    expect(page).to have_content("NOT Jessey")
   end
 end

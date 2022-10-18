@@ -2,17 +2,17 @@
 <form action="/trainers/<%= @trainer.id %>/digimons" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter Name:</p>
-  <input type='text' name='digimon[name]'/><br/>
+  <input type='text' name='name'/><br/>
   <br> 
   <p>Enter Kind:</p>
-  <input type='text' name='digimon[kind]'/><br/>
+  <input type='text' name='kind'/><br/>
   <br> 
   <p>Starter?</p>
-  <pre> <input type='radio' id="true" name='digimon[starter]' value="true"/>    <input type='radio' id="false" name='digimon[starter]' value="false"/></pre>
+  <pre> <input type='radio' id="true" name='starter' value="true"/>    <input type='radio' id="false" name='starter' value="false"/></pre>
   <pre><label for="true">True</label>  <label for="false">False</label></pre>
   <br>
   <p>Enter Wins:</p>
-  <input type='text' name='digimon[wins]'/><br/>
+  <input type='text' name='wins'/><br/>
   <br>
   <p>Trainer Name:</p>
   <p> <%= @trainer.name %> <p>

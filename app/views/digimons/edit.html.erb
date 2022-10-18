@@ -4,17 +4,17 @@
   <input type="hidden" name="_method" value="PATCH" />
   <h2>Edit:</h2>
   <p>Name:</p>
-  <input type='text' name='digimon[name]' value="<%= @digimon.name %>"/><br/>
+  <input type='text' name='name' value="<%= @digimon.name %>"/><br/>
   <br> 
   <p>Kind:</p>
-  <input type='text' name='digimon[kind]' value="<%= @digimon.kind %>"/><br/>
+  <input type='text' name='kind' value="<%= @digimon.kind %>"/><br/>
   <br> 
   <p>Starter?</p>
-  <pre> <input type='radio' id="true" name='digimon[starter]' value="true" checked="<%= @digimon.starter %>"/>    <input type='radio' id="false" name='digimon[starter]' value="false" checked="<% !@digimon.starter %>"/></pre>
+  <pre> <input type='radio' id="true" name='starter' value="true" checked="<%= @digimon.starter %>"/>    <input type='radio' id="false" name='starter' value="false" checked="<% !@digimon.starter %>"/></pre>
   <pre><label for="true">True</label>  <label for="false">False</label></pre>
   <br>
   <p>Wins:</p>
-  <input type='text' name='digimon[wins]' value="<%= @digimon.wins %>"/><br/>
+  <input type='text' name='wins' value="<%= @digimon.wins %>"/><br/>
   <br>
   <p>Trainer Name:</p>
   <p> <%= @digimon.trainer.name %> <p>

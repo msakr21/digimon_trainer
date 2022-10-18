@@ -13,13 +13,13 @@ RSpec.describe 'the edit digimon page' do
     visit "/digimons/#{@digimon.id}/edit"
 
     expect(page).to have_content("Name:")
-    expect(page).to have_field("digimon[name]", with: "#{@digimon.name}")
+    expect(page).to have_field("name", with: "#{@digimon.name}")
     expect(page).to have_content("Kind:")
-    expect(page).to have_field("digimon[kind]", with: "#{@digimon.kind}")
+    expect(page).to have_field("kind", with: "#{@digimon.kind}")
     expect(page).to have_content("Starter?")
     expect(page).to have_checked_field("true")
     expect(page).to have_content("Wins:")
-    expect(page).to have_field("digimon[wins]", with: "#{@digimon.wins}")
+    expect(page).to have_field("wins", with: "#{@digimon.wins}")
     expect(page).to have_selector(:css, "form")
   end
 end

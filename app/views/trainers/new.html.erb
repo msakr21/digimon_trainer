@@ -2,13 +2,13 @@
 <form action="/trainers" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter Name:</p>
-  <input type='text' name='trainer[name]'/><br/>
+  <input type='text' name='name'/><br/>
   <br> 
   <p>Enter Age:</p>
-  <input type='text' name='trainer[age]'/><br/>
+  <input type='text' name='age'/><br/>
   <br> 
   <p>Tutorial Completed?</p>
-  <pre> <input type='radio' id="true" name='trainer[tutorial_completed]' value="true"/>    <input type='radio' id="false" name='trainer[tutorial_completed]' value="false"/></pre>
+  <pre> <input type='radio' id="true" name='tutorial_completed' value="true"/>    <input type='radio' id="false" name='tutorial_completed' value="false"/></pre>
   <pre><label for="true">True</label>  <label for="false">False</label></pre>
   <br> 
   <input type='submit' value="Create Trainer"/>
