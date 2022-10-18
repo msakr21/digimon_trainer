@@ -26,6 +26,8 @@ class TrainersController < ApplicationController
 
   def edit
     @trainer = Trainer.find(params[:trainer_id])
+
+    
   end
 
   def update

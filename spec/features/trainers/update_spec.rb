@@ -14,9 +14,9 @@ RSpec.describe 'update' do
 
     fill_in "name", with: "NOT Jessey"
     fill_in "age", with: "201"
-    choose "true"
+    choose "True"
     
-    click_on "Submit"
+    click_on "Update Trainer"
 
     expect(page.current_path).to eql("/trainers/#{@trainer.id}")
     expect(page).to have_content("NOT Jessey")

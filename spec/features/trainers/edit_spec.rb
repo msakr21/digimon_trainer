@@ -12,12 +12,13 @@ RSpec.describe 'the edit trainer page' do
   it "displays a filled form" do
     visit "/trainers/#{@trainer.id}/edit"
 
-    expect(page).to have_content("Name:")
+    expect(page).to have_content("Name")
     expect(page).to have_field("name", with: "#{@trainer.name}")
-    expect(page).to have_content("Age:")
+    expect(page).to have_content("Age")
     expect(page).to have_field("age", with: "#{@trainer.age}")
-    expect(page).to have_content("Tutorial Completed?")
-    expect(page).to have_checked_field("false")
+    expect(page).to have_content("Tutorial completed?")
+    expect(page).to have_content("False")
+    expect(page).to have_content("True")
     expect(page).to have_selector(:css, "form")
   end
 end

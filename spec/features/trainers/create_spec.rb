@@ -6,7 +6,7 @@ RSpec.describe 'the create trainer' do
 
     fill_in "name", with: "Jessey"
     fill_in "age", with: "102"
-    choose "false"
+    choose "False"
     
     click_on "Create Trainer"
   

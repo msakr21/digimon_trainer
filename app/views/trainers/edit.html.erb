@@ -1,16 +1,13 @@
-<form action="/trainers/<%= @trainer.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <h2>Edit:</h2>
-  <p>Name:</p>
-  <input type='text' name='name' value="<%= @trainer.name %>"/><br/>
-  <br> 
-  <p>Age:</p>
-  <input type='text' name='age' value="<%= @trainer.age %>"/><br/>
-  <br> 
-  <p>Tutorial Completed?</p>
-  <pre> <input type='radio' id="true" name='tutorial_completed' value="true"/>    <input type='radio' id="false" name='tutorial_completed' value="false" checked= "checked"/> </pre>
-  <pre><label for="true">True</label>  <label for="false">False</label></pre>
-  <br> 
-  <input type='submit' value="Submit"/>
-</form>
+<h1>Edit Trainer</h1>
+<%= form_with url: "/trainers/#{@trainer.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, value: @trainer.name %><br><br>
+    <%= form.label :age %>
+    <%= form.text_field :age, value: @trainer.age %><br><br>
+    <%= form.label :tutorial_completed? %><br><br>
+    <%= form.label :tutorial_completed, "True", :value => 'true'%>
+    <%= form.radio_button :tutorial_completed, "true" %> 
+    <%= form.label :tutorial_completed, "False", :value => 'false'%>
+    <%= form.radio_button :tutorial_completed, "false" %><br><br>
+    <%= form.submit 'Update Trainer' %>
+<% end %>
