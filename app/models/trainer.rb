@@ -8,4 +8,8 @@ class Trainer < ApplicationRecord
   def digimons_count
     self.digimons.count
   end
+
+  def order_digimons_by(parameters)
+    self.digimons.order(parameters)
+  end
 end

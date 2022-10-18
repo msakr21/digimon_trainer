@@ -2,9 +2,9 @@
 <h4> <span> <%= link_to "Sort Alphabatically",  :sort => "name" %> </span> 
 <span> 
 <%= form_for :min_wins, method: :get do %>
-  <%= label_tag "min_wins" %>
+  <%= label_tag "Filter by wins:" %>
   <%= number_field_tag "min_wins" %>
-  <%= submit_tag "Filter" %>
+  <%= submit_tag "Only return records with more wins" %>
 <% end %>
 </span>
 </h4>
