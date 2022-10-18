@@ -1,23 +1,15 @@
-<h1>Digimon Update Form</h1>
-<form action="/digimons/<%= @digimon.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <h2>Edit:</h2>
-  <p>Name:</p>
-  <input type='text' name='name' value="<%= @digimon.name %>"/><br/>
-  <br> 
-  <p>Kind:</p>
-  <input type='text' name='kind' value="<%= @digimon.kind %>"/><br/>
-  <br> 
-  <p>Starter?</p>
-  <pre> <input type='radio' id="true" name='starter' value="true" checked="<%= @digimon.starter %>"/>    <input type='radio' id="false" name='starter' value="false" checked="<% !@digimon.starter %>"/></pre>
-  <pre><label for="true">True</label>  <label for="false">False</label></pre>
-  <br>
-  <p>Wins:</p>
-  <input type='text' name='wins' value="<%= @digimon.wins %>"/><br/>
-  <br>
-  <p>Trainer Name:</p>
-  <p> <%= @digimon.trainer.name %> <p>
-  <br> 
-  <input type='submit' value="Submit"/>
-</form>
+<h1>Edit Digimon</h1>
+<%= form_with url: "/digimons/#{@digimon.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, value: @digimon.name %><br><br>
+    <%= form.label :kind %>
+    <%= form.text_field :kind, value: @digimon.kind %><br><br>
+    <%= form.label :starter? %><br><br>
+    <%= form.label :starter, "True", :value => 'true'%>
+    <%= form.radio_button :starter, "true", :checked => @checked_true %> 
+    <%= form.label :starter, "False", :value => 'false'%>
+    <%= form.radio_button :starter, "false", :checked => @checked_false %><br><br>
+    <%= form.label :wins %>
+    <%= form.text_field :wins, value: @digimon.wins %><br><br>
+    <%= form.submit 'Update Digimon' %>
+<% end %>

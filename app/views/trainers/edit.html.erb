@@ -5,9 +5,9 @@
     <%= form.label :age %>
     <%= form.text_field :age, value: @trainer.age %><br><br>
     <%= form.label :tutorial_completed? %><br><br>
-    <%= form.label :tutorial_completed, "True", :value => 'true'%>
-    <%= form.radio_button :tutorial_completed, "true" %> 
+    <%= form.label :tutorial_completed, "True", :value => 'true' %>
+    <%= form.radio_button :tutorial_completed, "true", :checked => @checked_true %> 
     <%= form.label :tutorial_completed, "False", :value => 'false'%>
-    <%= form.radio_button :tutorial_completed, "false" %><br><br>
+    <%= form.radio_button :tutorial_completed, "false", :checked => @checked_false %><br><br>
     <%= form.submit 'Update Trainer' %>
 <% end %>

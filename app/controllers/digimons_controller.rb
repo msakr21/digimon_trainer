@@ -9,6 +9,7 @@ class DigimonsController < ApplicationController
 
   def edit
     @digimon = Digimon.find(params[:digimon_id])
+    button_selection
   end
 
   def update
@@ -16,6 +17,16 @@ class DigimonsController < ApplicationController
     digimon.update(digimon_params)
     digimon.save
     redirect_to "/digimons/#{digimon.id}"
+  end
+
+  def button_selection
+    if @digimon.starter == true
+      @checked_true = true
+      @checked_false = nil
+    else
+      @checked_true = nil
+      @checked_false = true
+    end
   end
 
   def destroy

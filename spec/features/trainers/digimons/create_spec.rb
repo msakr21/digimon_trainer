@@ -13,7 +13,7 @@ RSpec.describe 'Trainers Digimons new' do
 
     fill_in "name", with: "Gabu"
     fill_in "kind", with: "Gabumon"
-    choose "false"
+    choose "False"
     fill_in "wins", with: 7
     
     click_on "Create Digimon"

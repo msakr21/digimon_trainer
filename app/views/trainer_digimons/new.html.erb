@@ -1,21 +1,15 @@
 <h1>New Digimon Submission Form</h1>
-<form action="/trainers/<%= @trainer.id %>/digimons" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>Enter Name:</p>
-  <input type='text' name='name'/><br/>
-  <br> 
-  <p>Enter Kind:</p>
-  <input type='text' name='kind'/><br/>
-  <br> 
-  <p>Starter?</p>
-  <pre> <input type='radio' id="true" name='starter' value="true"/>    <input type='radio' id="false" name='starter' value="false"/></pre>
-  <pre><label for="true">True</label>  <label for="false">False</label></pre>
-  <br>
-  <p>Enter Wins:</p>
-  <input type='text' name='wins'/><br/>
-  <br>
-  <p>Trainer Name:</p>
-  <p> <%= @trainer.name %> <p>
-  <br> 
-  <input type='submit' value="Create Digimon"/>
-</form>
+<%= form_with url: "/trainers/#{@trainer.id}/digimons", method: :post, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %><br><br>
+    <%= form.label :kind %>
+    <%= form.text_field :kind %><br><br>
+    <%= form.label :starter? %><br><br>
+    <%= form.label :starter, "True", :value => 'true'%>
+    <%= form.radio_button :starter, "true" %> 
+    <%= form.label :starter, "False", :value => 'false'%>
+    <%= form.radio_button :starter, "false" %><br><br>
+    <%= form.label :wins %>
+    <%= form.text_field :wins %><br><br>
+    <%= form.submit 'Create Digimon' %>
+<% end %>
