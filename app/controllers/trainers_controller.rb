@@ -2,6 +2,12 @@ class TrainersController < ApplicationController
 
   def index
     @trainers = Trainer.order_by_created_at
+
+    if params[:sort].present? || params[:sort] == true
+      @trainers = Trainer.group_by_count
+
+      @display_count = true
+    end
   end
 
   def show

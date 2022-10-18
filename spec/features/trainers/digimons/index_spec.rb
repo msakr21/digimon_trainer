@@ -41,6 +41,25 @@ RSpec.describe 'Trainers Digimons index' do
     expect(current_path).to eq("/trainers/#{@trainer.id}/digimons")
     expect("Agu").to appear_before("Gabu", only_text: true)
   end
+
+  it "has a field to input minimum number of wins to submit via button to list digimons accordingly" do
+    visit "/trainers/#{@trainer.id}/digimons"
+    
+    expect(page).to have_field("min_wins")
+    expect(page).to have_button("Only return records with more wins")
+  end
+
+  it "lists the digimon in the trainer/digimon index page by minimum win upon submission of value" do
+    visit "/trainers/#{@trainer.id}/digimons"
+    expect("Gabu").to appear_before("Agu")
+    
+    fill_in "min_wins", with: 8
+    click_on "Only return records with more wins"
+
+    expect(current_path).to eq("/trainers/#{@trainer.id}/digimons")
+    expect(page).to have_content(@digimon.name)
+    expect(page).to_not have_content(@digimon_2.name)
+  end
 end
 
 

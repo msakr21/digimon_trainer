@@ -1,7 +1,17 @@
 class TrainerDigimonsController < ApplicationController
   def index
     @trainer = Trainer.find(params[:trainer_id])
-    @digimons = @trainer.digimons.order(params[:sort])
+    digimon_list
+  end
+
+  def digimon_list
+    if params[:min_wins].present?
+      @digimons = Digimon.filter_by_wins(params[:min_wins].to_i)
+    elsif params[:sort].present?
+      @digimons = @trainer.order_digimons_by(params[:sort])
+    else
+      @digimons = @trainer.digimons
+    end
   end
 
   def new

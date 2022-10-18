@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   post'/trainers/:trainer_id/digimons', to: 'trainer_digimons#create'
   delete '/trainers/:id', to: 'trainers#destroy'
   delete '/digimons/:id', to: 'digimons#destroy'
+  get '/trainers/:trainer_id/digimons/filter', to: 'trainer_digimons#index'
 end

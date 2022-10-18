@@ -1,5 +1,12 @@
 <h1>Trainers</h1>
+<span> <%= link_to "Sort by Digimon Count", :sort => true %> </span>
+<% if @display_count == true %> 
+  <% @trainers.each do |trainer| %>
+    <p> Trainer: <%= trainer.name %>, Digimon Companions: <%= trainer.digimons_count %> <a href="/trainers/<%= trainer.id %>/edit">edit</a> <%= link_to "delete", "/trainers/#{trainer.id}", method: :delete %> </p>
+  <% end %>
+<% else %>
 <% @trainers.each do |trainer| %>
-  <p> <%= trainer.name %> <a href="/trainers/<%= trainer.id %>/edit">edit</a> <%= link_to "delete", "/trainers/#{trainer.id}", method: :delete %> </p>
+    <p> Trainer: <%= trainer.name %> <a href="/trainers/<%= trainer.id %>/edit">edit</a> <%= link_to "delete", "/trainers/#{trainer.id}", method: :delete %> </p>
+  <% end %>
 <% end %>
 <h3><a href="/trainers/new">Add New Trainer</a></h3>

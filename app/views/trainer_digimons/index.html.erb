@@ -1,6 +1,13 @@
 <h1> <%= @trainer.name %>'s Digimon: </h1>
-<h4> <%= link_to "Sort Alphabatically",  :sort => "name" %> </h4> 
-
+<h4> <span> <%= link_to "Sort Alphabatically",  :sort => "name" %> </span> 
+<span> 
+<%= form_for :min_wins, method: :get do %>
+  <%= label_tag "Filter by wins:" %>
+  <%= number_field_tag "min_wins" %>
+  <%= submit_tag "Only return records with more wins" %>
+<% end %>
+</span>
+</h4>
 <% @digimons.each do |digimon| %>
  <p> Name: <%= digimon.name %> </p> 
  <p> Kind: <%= digimon.kind %> </p>
@@ -9,6 +16,7 @@
  <p> Trainer: <%= digimon.trainer.name %> </p>
  <p> Created on: <%= digimon.created_at %> </p>
  <p> Last Updated: <%= digimon.updated_at %> </p>
+ <br>
 <% end %>
 
 <h3><a href="/trainers/<%= @trainer.id %>/digimons/new">Add New Digimon</a></h3>
