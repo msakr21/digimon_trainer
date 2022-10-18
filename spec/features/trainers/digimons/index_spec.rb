@@ -42,14 +42,14 @@ RSpec.describe 'Trainers Digimons index' do
     expect("Agu").to appear_before("Gabu", only_text: true)
   end
 
-  it "has a button to list digimons in alphabitcal order" do
+  it "has a field to input minimum number of wins to submit via button to list digimons accordingly" do
     visit "/trainers/#{@trainer.id}/digimons"
     
     expect(page).to have_field("min_wins")
     expect(page).to have_button("Only return records with more wins")
   end
 
-  it "sorts the digimon in the trainer/digimon index page in alphabatical order" do
+  it "lists the digimon in the trainer/digimon index page by minimum win upon submission of value" do
     visit "/trainers/#{@trainer.id}/digimons"
     expect("Gabu").to appear_before("Agu")
     

@@ -9,8 +9,12 @@
   <input type='text' name='age' value="<%= @trainer.age %>"/><br/>
   <br> 
   <p>Tutorial Completed?</p>
-  <pre> <input type='radio' id="true" name='tutorial_completed' value="true" checked="<%= @trainer.tutorial_completed %>"/>    <input type='radio' id="false" name='tutorial_completed' value="false" checked="<% !@trainer.tutorial_completed %>"/></pre>
+  <pre> <input type='radio' id="true" name='tutorial_completed' value="true"/>    <input type='radio' id="false" name='tutorial_completed' value="false" checked= "checked"/> </pre>
   <pre><label for="true">True</label>  <label for="false">False</label></pre>
   <br> 
   <input type='submit' value="Submit"/>
 </form>
+
+<%# <%= "#{@trainer.tutorial_completed}" %>
+
+<%# checked= <%= "#{@trainer.tutorial_completed}" %>

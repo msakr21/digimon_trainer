@@ -2,19 +2,11 @@ class TrainersController < ApplicationController
 
   def index
     @trainers = Trainer.order_by_created_at
-    if params[:sort] != nil || params[:sort] == true
-      trainer_count = Hash.new(0)
-      @trainers.each do |trainer|
-        trainer_count[trainer] = trainer.digimons_count
-      end
-      
-      trainer_list = []
 
-      trainer_count.values.sort.reverse.each do |count|
-        trainer_list << trainer_count.key(count)
-      end
+    if params[:sort].present? || params[:sort] == true
+      @trainers = Trainer.group_by_count
 
-      @trainers = trainer_list
+      @display_count = true
     end
   end
 
