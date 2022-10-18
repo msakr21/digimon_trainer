@@ -12,11 +12,10 @@ RSpec.describe 'Trainers Digimons new' do
     visit "/trainers/#{@trainer.id}/digimons/new"
 
     expect(page).to have_content("New Digimon Submission Form")
-    expect(page).to have_content("Name:")
-    expect(page).to have_content("Kind:")
+    expect(page).to have_content("Name")
+    expect(page).to have_content("Kind")
     expect(page).to have_content("Starter?")
-    expect(page).to have_content("Wins:")
-    expect(page).to have_content("Trainer Name:")
+    expect(page).to have_content("Wins")
     expect(page).to have_selector(:css, 'form')
   end
 end

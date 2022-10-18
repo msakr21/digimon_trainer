@@ -14,10 +14,10 @@ RSpec.describe 'the update digimon feature' do
 
     fill_in "name", with: "NOT Agu"
     fill_in "kind", with: "ToyAgumon"
-    choose "false"
+    choose "False"
     fill_in "wins", with: 12
     
-    click_on "Submit"
+    click_on "Update Digimon"
 
     expect(page.current_path).to eql("/digimons/#{@digimon.id}")
     expect(page).to have_content("NOT Agu")
