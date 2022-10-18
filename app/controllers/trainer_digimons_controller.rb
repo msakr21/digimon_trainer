@@ -1,7 +1,7 @@
 class TrainerDigimonsController < ApplicationController
   def index
     @trainer = Trainer.find(params[:trainer_id])
-    @digimons = @trainer.digimons.all.order(params[:sort])
+    @digimons = @trainer.digimons.order(params[:sort])
   end
 
   def new
@@ -10,9 +10,14 @@ class TrainerDigimonsController < ApplicationController
   
   def create
     trainer = Trainer.find(params[:trainer_id])
-    digimon = trainer.digimons.new({name: params[:digimon][:name], kind: params[:digimon][:kind], starter: params[:digimon][:starter], wins: params[:digimon][:wins]})
+    digimon = trainer.digimons.new(digimon_params)
 
     digimon.save
     redirect_to "/trainers/#{trainer.id}/digimons"
+  end
+
+private
+  def digimon_params
+    params.permit(:name, :kind, :starter, :wins)
   end
 end

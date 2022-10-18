@@ -7,18 +7,18 @@ RSpec.describe 'the digimons index page' do
     @digimon_2 = @trainer.digimons.create!(name: "Gagu", kind: "Gabumon", starter: false, wins: 7)
   end
 
-  xit "displays a list of digimons" do
-    visit "/digimons"
+  # xit "displays a list of digimons" do
+  #   visit "/digimons"
 
-    expect(page).to have_content(@digimon.name)
-    expect(page).to have_content(@digimon.kind)
-    expect(page).to have_content(@digimon.starter)
-    expect(page).to have_content(@digimon.wins)
-    expect(page).to have_content(@trainer.name)
-    expect(page).to have_content(@digimon_2.name)
-    expect(page).to have_content(@digimon.created_at)
-    expect(page).to have_content(@digimon.updated_at)
-  end
+  #   expect(page).to have_content(@digimon.name)
+  #   expect(page).to have_content(@digimon.kind)
+  #   expect(page).to have_content(@digimon.starter)
+  #   expect(page).to have_content(@digimon.wins)
+  #   expect(page).to have_content(@trainer.name)
+  #   expect(page).to have_content(@digimon_2.name)
+  #   expect(page).to have_content(@digimon.created_at)
+  #   expect(page).to have_content(@digimon.updated_at)
+  # end
 
   it "only displays digimons who are starters" do
     visit "/digimons"

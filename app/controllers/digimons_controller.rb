@@ -13,7 +13,7 @@ class DigimonsController < ApplicationController
 
   def update
     digimon = Digimon.find(params[:id])
-    digimon.update({name: params[:digimon][:name], kind: params[:digimon][:kind], starter: params[:digimon][:starter], wins: params[:digimon][:wins]})
+    digimon.update(digimon_params)
     digimon.save
     redirect_to "/digimons/#{digimon.id}"
   end
@@ -21,5 +21,10 @@ class DigimonsController < ApplicationController
   def destroy
     Digimon.destroy(params[:id])
     redirect_to "/digimons"
+  end
+
+private
+  def digimon_params
+    params.permit(:name, :kind, :starter, :wins)
   end
 end

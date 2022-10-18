@@ -12,7 +12,7 @@ class TrainersController < ApplicationController
   end
 
   def create
-    trainer = Trainer.new({name: params[:trainer][:name], age: params[:trainer][:age],tutorial_completed: params[:trainer][:tutorial_completed]})
+    trainer = Trainer.new(trainer_params)
 
     trainer.save
     redirect_to '/trainers'
@@ -24,7 +24,7 @@ class TrainersController < ApplicationController
 
   def update
     trainer = Trainer.find(params[:id])
-    trainer.update({name: params[:trainer][:name], age: params[:trainer][:age],tutorial_completed: params[:trainer][:tutorial_completed]})
+    trainer.update(trainer_params)
     trainer.save
     redirect_to "/trainers/#{trainer.id}"
   end

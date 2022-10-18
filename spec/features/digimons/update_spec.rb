@@ -12,10 +12,10 @@ RSpec.describe 'the update digimon feature' do
   it "updates an entry in the database upon clicking submit" do
     visit "/digimons/#{@digimon.id}/edit"
 
-    fill_in "digimon[name]", with: "NOT Agu"
-    fill_in "digimon[kind]", with: "ToyAgumon"
+    fill_in "name", with: "NOT Agu"
+    fill_in "kind", with: "ToyAgumon"
     choose "false"
-    fill_in "digimon[wins]", with: 12
+    fill_in "wins", with: 12
     
     click_on "Submit"
 
