@@ -41,6 +41,23 @@ RSpec.describe 'Trainers Digimons index' do
     expect(current_path).to eq("/trainers/#{@trainer.id}/digimons")
     expect("Agu").to appear_before("Gabu", only_text: true)
   end
+
+  it "has a button to list digimons in alphabitcal order" do
+    visit "/trainers/#{@trainer.id}/digimons"
+    save_and_open_page
+    expect(page).to have_field("Filter by wins:")
+    expect(page).to have_button("Only return records with more wins")
+  end
+
+  xit "sorts the digimon in the trainer/digimon index page in alphabatical order" do
+    visit "/trainers/#{@trainer.id}/digimons"
+    expect("Gabu").to appear_before("Agu")
+    
+    fill_in "wins"
+
+    expect(current_path).to eq("/trainers/#{@trainer.id}/digimons")
+    expect("Agu").to appear_before("Gabu", only_text: true)
+  end
 end
 
 

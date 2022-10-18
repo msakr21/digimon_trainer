@@ -2,6 +2,10 @@ class TrainerDigimonsController < ApplicationController
   def index
     @trainer = Trainer.find(params[:trainer_id])
     @digimons = @trainer.digimons.order(params[:sort])
+    if params[:min_wins].to_i != nil
+      @digimons = @trainer.digimons.where("wins > ?", params[:min_wins].to_i)
+    end
+
   end
 
   def new
