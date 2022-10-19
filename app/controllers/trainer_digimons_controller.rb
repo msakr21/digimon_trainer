@@ -5,8 +5,9 @@ class TrainerDigimonsController < ApplicationController
   end
 
   def digimon_list
+    # binding.pry
     if params[:min_wins].present?
-      @digimons = Digimon.filter_by_wins(params[:min_wins].to_i)
+      @digimons = @trainer.digimons.filter_by_wins(params[:min_wins].to_i)
     elsif params[:sort].present?
       @digimons = @trainer.order_digimons_by(params[:sort])
     else
